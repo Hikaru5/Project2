@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-class PatientAccount()
+class PatientAccount
 {
 private:
 	double fees;
@@ -27,11 +27,11 @@ public:
 		return fees+=days*rate;
 	}
 
-	friend class Surgery();
-	friend class Pharmacy();
+	friend class Surgery;
+	friend class Pharmacy;
 }
 
-class Surgery()
+class Surgery
 {
 private:
 	double heart = 500;
@@ -67,7 +67,7 @@ public:
 	}
 }
 
-class Pharmacy()
+class Pharmacy
 {
 public:
 	Pharmacy()
@@ -100,9 +100,9 @@ int main()
 {
 	bool cont = true;
 	int choice;
-	PatientAccount care = new PatientAccount();
-	Surgery cut = new Surgery();
-	Pharmacy med = new Pharmacy();
+	PatientAccount care();
+	Surgery cut();
+	Pharmacy med();
 
 	while (cont)
 	{
@@ -175,4 +175,5 @@ int main()
 			cout << "You are charged for $" << care.getCharges();
 		}
 	}
+	return 0;
 }

@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-class Date()
+class Date
 {
 private:
 	int month;
@@ -18,7 +18,7 @@ public:
 		year = 0;
 	}
 
-	String altMonth()
+	string altMonth()
 	{
 		if (month == 1)
 			return "January";
@@ -91,18 +91,18 @@ public:
 		}
 	}
 
-	Date operator-(const &Date date1)
+	Date operator-(const Date date1)
 	{
-		return (date1.month - this.month) * 30 + (date1.day - this.day) + (date1.year - this.year) * 365;
+		return (date1.month - month) * 30 + (date1.day - day) + (date1.year - year) * 365;
 	}
 
-	osstream &operator <<(ostream &strm, const Date &date)
+	ostream &operator<<(ostream &strm, const Date &date)
 	{
 		strm << date.print2();
 		return strm;
 	}
 
-	istream &operator >>(istream $strm, Date &date)
+	istream &operator>>(istream $strm, Date &date)
 	{
 		bool error = true;
 		int check;
@@ -117,5 +117,21 @@ public:
 		cout << "Year: ";
 		strm >> date.year;
 		return strm;
+	}
+
+	int main()
+	{
+		Date calendar();
+		Date NewYears();
+		cin >> calendar;
+		cin >> NewYears;
+		cout << calendar;
+		calendar++;
+		cout << calendar;
+		NewYears--;
+		cout << NewYears;
+		cout << (calendar-NewYears);
+
+		return 0;
 	}
 }
